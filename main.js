@@ -16,27 +16,31 @@ function checkPalindromeBirthday() {
       month:Number(dateValue.slice(5,7)),
       year: Number(dateValue.slice(0,4)),
    };
-   if(date!='')
+   if(dateValue==='')
    {
-     var isPalindrome = checkPalindrome(date);
-     if(isPalindrome === 'true')
-     {
-       showMessage("Yay!🎉 Your birthday is Palindrome.")
-     }
-     else{
-      
-       var nextPalindromeDate =  getNextPalindrome(date);
+      showMessage("please enter date of birth.")
+   }
+   else{
+     
+      var isPalindrome = checkPalindrome(date);
+      if(isPalindrome === 'true')
+      {
+        showMessage("Yay!🎉 Your birthday is Palindrome.")
+      }
+      else{
        
-        var nextPalin= String(nextPalindromeDate[1].day) + '-' + String(nextPalindromeDate[1].month) + '-' + String(nextPalindromeDate[1].year);
-
-       showMessage("The nearest Palindrome date is " + String(nextPalin) + ". It will come after " + String(nextPalindromeDate[0]) + " days");
-     }
+        var nextPalindromeDate =  getNextPalindrome(date);
+        
+         var nextPalin= String(nextPalindromeDate[1].day) + '-' + String(nextPalindromeDate[1].month) + '-' + String(nextPalindromeDate[1].year);
+ 
+        showMessage("The nearest Palindrome date is " + String(nextPalin) + ". It will come after " + String(nextPalindromeDate[0]) + " days");
+      }
    }
  
 // here I used slice() func, but can use split('-') func also.
 
 
-console.log(date);
+    //console.log(date);
   }
 
 
